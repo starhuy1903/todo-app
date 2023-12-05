@@ -1,3 +1,6 @@
+import { IsString } from 'class-validator';
+
 export class TodoDto {
-  status: 'done' | 'undone';
+  @IsString()
+  status: string;
 }
