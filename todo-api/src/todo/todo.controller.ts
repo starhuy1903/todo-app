@@ -26,8 +26,6 @@ export class TodoController {
 
   @Post()
   createTodo(@Body() dto: CreateTodoDto, @Request() request) {
-    console.log('request ', request.user);
-
     return this.todoService.createTodo(dto, request.user.sub);
   }
 
