@@ -50,9 +50,8 @@ export class TodoService {
         throw new NotFoundException(`Todo with id ${todoId} not found`);
       }
 
-      console.log('update ', dto.status);
       const statusEnum: TodoStatus =
-        TodoStatus[dto.status.toUpperCase() as keyof typeof TodoStatus];
+        TodoStatus[dto.status as keyof typeof TodoStatus];
 
       // Update the status
       const updatedTodo = await this.prisma.todo.update({

@@ -7,7 +7,8 @@ export const signIn = async ({
 }: {
   email: string;
   password: string;
-}) => requestUtils.post<{ token: string }>("auth/login", { email, password });
+}) =>
+  requestUtils.post<{ accessToken: string }>("auth/login", { email, password });
 
 export const createTodo = async ({ title }: { title: string }) =>
   requestUtils.post<Todo>("todos", { title });

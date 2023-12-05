@@ -39,8 +39,6 @@ export default function TodoContextProvider({
     fetchTodos();
   }, [fetchTodos]);
 
-  console.log(todos);
-
   const onCreateTodo = useCallback(async (title: string) => {
     try {
       const result = await createTodo({ title });

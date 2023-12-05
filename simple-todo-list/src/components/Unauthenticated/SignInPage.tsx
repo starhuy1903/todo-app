@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import CenteredPage from "common/CenteredPage";
 import { useAppContext } from "context/app";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { signIn } from "repositories/todo";
@@ -46,7 +46,7 @@ export default function SignInPage() {
           email: data.email,
           password: data.password,
         });
-        setToken(result.data.token);
+        setToken(result.data.accessToken);
         navigate("/");
       } catch (e) {
         console.log(e);

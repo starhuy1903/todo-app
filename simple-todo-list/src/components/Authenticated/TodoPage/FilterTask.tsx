@@ -1,23 +1,26 @@
-import { TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { useCallback } from "react";
 import { useTodoContext } from "context/todo";
 
-export default function FilterTask () {
+export default function FilterTask() {
   const { filter, onChangeFilter } = useTodoContext();
 
-  const handleChangeFieldFilter = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    onChangeFilter(e.target.value);
-  }, [onChangeFilter]);
+  const handleChangeFieldFilter = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      onChangeFilter(e.target.value);
+    },
+    [onChangeFilter]
+  );
 
   return (
-    <div style={{ marginTop: 16 }}>
+    <Box mt={2}>
       <TextField
         id="outlined-basic"
-        label="Outlined"
+        label="Filter"
         variant="outlined"
         value={filter}
         onChange={handleChangeFieldFilter}
       />
-    </div>
+    </Box>
   );
-};
+}
