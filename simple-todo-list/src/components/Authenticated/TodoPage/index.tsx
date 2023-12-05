@@ -1,9 +1,9 @@
 import TodoContextProvider from "context/todo.tsx";
-import AddTask from "./AddTask.tsx";
+import AddTask from "./AddTask";
 import FilterTask from "./FilterTask.tsx";
 import TaskList from "./TaskList.tsx";
 
-export default function TodoPage () {
+export default function TodoPage() {
   return (
     <TodoContextProvider>
       <AddTask />
@@ -11,4 +11,4 @@ export default function TodoPage () {
       <TaskList />
     </TodoContextProvider>
   );
-};
+}

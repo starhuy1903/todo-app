@@ -1,13 +1,9 @@
 import "./App.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import SignInPage from "components/Unauthorized/SignInPage.tsx";
-import TodoPage from "components/Authorized/TodoPage/index.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SignInPage from "components/Unauthenticated/SignInPage";
+import TodoPage from "components/Authenticated/TodoPage";
 import ProtectedRoute from "common/ProtectedRoute.tsx";
 import AppContextProvider from "context/app.tsx";
-
 
 function App() {
   const router = createBrowserRouter([
@@ -22,14 +18,14 @@ function App() {
           <TodoPage />
         </ProtectedRoute>
       ),
-    }
+    },
   ]);
 
   return (
     <AppContextProvider>
       <RouterProvider router={router} />
     </AppContextProvider>
-  )
+  );
 }
 
 export default App;

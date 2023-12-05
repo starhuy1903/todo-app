@@ -1,14 +1,18 @@
 import useLocalStorage from "hooks/useLocalStorage";
-import createContext from "utilts/createContext";
+import createContext from "utils/createContext";
 
 interface AppContextValue {
-  setToken: (token: string) => void,
-  isSignedIn: boolean,
+  setToken: (token: string) => void;
+  isSignedIn: boolean;
 }
 
 export const [useAppContext, AppContext] = createContext<AppContextValue>();
 
-export default function AppContextProvider ({ children }: { children: React.ReactNode }) {
+export default function AppContextProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [token, setToken] = useLocalStorage("access_token", "");
 
   const isSignedIn = !!token;
@@ -22,5 +26,5 @@ export default function AppContextProvider ({ children }: { children: React.Reac
     >
       {children}
     </AppContext.Provider>
-  )
+  );
 }
