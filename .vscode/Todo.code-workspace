@@ -6,11 +6,11 @@
     },
     {
       "name": "FE-App",
-      "path": "../simple-todo-list"
+      "path": "../fe-app"
     },
     {
       "name": "BE-App",
-      "path": "../todo-api"
+      "path": "../be-app"
     }
   ],
   "settings": {
@@ -23,7 +23,7 @@
     "files.trimFinalNewlines": true,
     "editor.wordWrap": "on",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "explicit"
     }
   }
 }
